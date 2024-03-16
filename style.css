@@ -1,96 +1,112 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@charset "UTF-8";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* Restante do seu código CSS aqui */
 
 body {
-  margin: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  overflow: scroll;
+  background: url(/public/imagens/china.jpg) no-repeat;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#ideogramas {
+  margin-top: 150px;
+  background-color: white;
+  border-width: 5px;
+  border-style: outset;
+  border-color: black;
+  border-image: initial;
+  border-radius: 20px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+#ideogramas input {
+  background-color: white;
+  border: none;
   text-align: center;
+  border-radius: 20px;
+  outline: none;
+}
+#ideogramas input:focus {
+  background-color: white;
+  border: none;
+}
+#ideogramas input:not(:focus) {
+  background-color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+#ideogramas button {
+  background-color: rgb(76, 175, 80);
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  position: relative;
+  right: -1px;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  padding: 10px 20px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 20px;
+  animation-name: botaoAnimado;
+  animation-duration: 4s;
+  animation-timing-function: linear;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@keyframes botaoAnimado {
+  0% {
+    right: -1px;
+  }
+  50% {
+    right: 180px;
+  }
+  100% {
+    right: -1px;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.lista {
+  width: calc(-20px + 100vw);
+  height: calc(-20px + 100vh);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15px 15px 20px;
+  gap: 20px;
+}
+
+.listaCards {
+  max-height: 250px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-areas:
+    "titulo titulo"
+    "titulo titulo"
+    "velocidade velocidade"
+    "botao botao";
+  border-radius: 20px;
+  padding: 15px;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgb(34, 193, 195) 0%,
+    rgb(45, 166, 253) 100%
+  );
+}
+.listaCards h1 {
+  grid-area: titulo;
+}
+.listaCards input {
+  grid-area: velocidade;
+}
+.listaCards button {
+  grid-area: botao;
+  border-radius: 20px;
+  border: none;
 }

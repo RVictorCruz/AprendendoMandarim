@@ -1,13 +1,36 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="./main.js"></script>
+    <title>Aprendendo Mandarim</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="ideogramas">
+      <!-- Ideogramas serão carregados aqui -->
+      <input
+        type="text"
+        id="entradaIdeograma"
+        placeholder="Digite o ideograma"
+      />
+      <button id="botaoReproduzir">Salvar Card</button>
+    </div>
+    <div class="lista">
+      <div id="card" style="display: none">
+        <div id="textoCard"></div>
+        <button id="botaoReproduzirCard">Reproduzir Som</button>
+        <label for="velocidadeFalaCard">Velocidade da Fala:</label>
+        <input
+          type="range"
+          id="velocidadeFalaCard"
+          min="0.5"
+          max="2"
+          step="0.1"
+          value="1.0"
+        />
+      </div>
+    </div>
   </body>
 </html>
